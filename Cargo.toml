@@ -3,6 +3,7 @@ name = "novu-rust"
 version = "0.1.0"
 edition = "2021"
 
+
 [dependencies]
 reqwest = { version = "0.12.4", features = ["json"] }
 serde = "1.0.201"
@@ -13,5 +14,9 @@ strum = { version = "0.26.2", features = ["derive"] }
 strum_macros = "0.26.2"
 thiserror = "1.0.60"
 
-[workspace]
-members = ["examples/*"]
+[dev-dependencies]
+async-std = { version = "1.12.0", features = ["attributes", "tokio1"] }
+
+[[example]]
+name = "trigger_single"
+path = "examples/trigger_single/src/main.rs"

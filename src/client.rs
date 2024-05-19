@@ -14,9 +14,19 @@ pub struct DataContainer<T> {
 }
 
 #[derive(Deserialize, Debug)]
+pub struct ErrorMessage {
+    message: String,
+    error: String,
+    #[serde(rename = "statusCode")]
+    status_code: u32,
+}
+
+#[derive(Deserialize, Debug)]
+#[serde(untagged)]
 pub enum Response<T> {
     Success(DataContainer<T>),
     Error(String),
+    GeneralError(ErrorMessage),
 }
 
 impl<T> Response<T> {
@@ -24,6 +34,7 @@ impl<T> Response<T> {
         match self {
             Response::Success(data) => Ok(data.data),
             Response::Error(e) => Err(ResponseError::Error(e)),
+            Response::GeneralError(e) => Err(ResponseError::GeneralError(e)),
         }
     }
 }
@@ -34,6 +45,7 @@ impl Display for ResponseError {
             ResponseError::Error(e) => write!(f, "ApiError: {}", e),
             ResponseError::InternalError(e) => write!(f, "InternalError: {:?}", e),
             ResponseError::ParseError(e) => write!(f, "ParseErrorL {:?}", e),
+            ResponseError::GeneralError(e) => write!(f, "GeneralError: {:?}", e),
         }
     }
 }
@@ -44,6 +56,7 @@ pub enum ResponseError {
     #[error(transparent)]
     InternalError(#[from] reqwest::Error),
     ParseError(#[from] crate::qs::Error),
+    GeneralError(ErrorMessage),
 }
 
 pub struct Client {
@@ -67,6 +80,7 @@ impl Client {
     ) -> Result<T, ResponseError> {
         match res {
             Ok(response) => {
+                dbg!(&response);
                 let res = response.json::<Response<T>>().await;
 
                 match res {
