@@ -61,7 +61,7 @@ impl Layouts {
     }
 
     pub async fn create(
-        &self,
+        self,
         data: CreateLayoutRequestDto,
     ) -> Result<CreateLayoutResponseDto, ResponseError> {
         self.client.post("/layouts", Some(&data)).await
@@ -84,7 +84,7 @@ impl Layouts {
     }
 
     pub async fn get(
-        &self,
+        self,
         data: GetLayoutByIdRequestDto,
     ) -> Result<GetLayoutResponseDto, ResponseError> {
         self.client
@@ -92,7 +92,7 @@ impl Layouts {
             .await
     }
 
-    pub async fn delete(&self, data: GetLayoutByIdRequestDto) -> Result<(), ResponseError> {
+    pub async fn delete(self, data: GetLayoutByIdRequestDto) -> Result<(), ResponseError> {
         self.client
             .delete(format!("/layouts/{}", data.layout_id))
             .await
@@ -108,7 +108,7 @@ impl Layouts {
             .await
     }
 
-    pub async fn set_default(&self, data: GetLayoutByIdRequestDto) -> Result<(), ResponseError> {
+    pub async fn set_default(self, data: GetLayoutByIdRequestDto) -> Result<(), ResponseError> {
         self.client
             .get(format!("/layouts/{}/default", data.layout_id))
             .await

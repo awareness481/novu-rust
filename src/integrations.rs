@@ -13,23 +13,23 @@ impl Integrations {
         Self { client }
     }
 
-    pub async fn get_all(&self) -> Result<Vec<IntegrationResponseDto>, ResponseError> {
+    pub async fn get_all(self) -> Result<Vec<IntegrationResponseDto>, ResponseError> {
         self.client.get("/integrations").await
     }
 
-    pub async fn get_active(&self) -> Result<Vec<IntegrationResponseDto>, ResponseError> {
+    pub async fn get_active(self) -> Result<Vec<IntegrationResponseDto>, ResponseError> {
         self.client.get("/integrations/active").await
     }
 
     pub async fn create(
-        &self,
+        self,
         data: CreateIntegrationRequestDto,
     ) -> Result<IntegrationResponseDto, ResponseError> {
         self.client.post("/integrations", Some(&data)).await
     }
 
     pub async fn update(
-        &self,
+        self,
         integration_id: String,
         data: UpdateIntegrationRequestDto,
     ) -> Result<IntegrationResponseDto, ResponseError> {
@@ -39,7 +39,7 @@ impl Integrations {
     }
 
     pub async fn set_integration_as_primary(
-        &self,
+        self,
         integration_id: String,
     ) -> Result<IntegrationResponseDto, ResponseError> {
         self.client
@@ -51,7 +51,7 @@ impl Integrations {
     }
 
     pub async fn delete(
-        &self,
+        self,
         integration_id: String,
     ) -> Result<IntegrationResponseDto, ResponseError> {
         self.client
@@ -60,7 +60,7 @@ impl Integrations {
     }
 
     pub async fn get_webhook_provider_status(
-        &self,
+        self,
         provider_id: String,
     ) -> Result<bool, ResponseError> {
         self.client

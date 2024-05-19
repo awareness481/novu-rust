@@ -21,18 +21,18 @@ impl Feeds {
     }
 
     pub async fn create(
-        &self,
+        self,
         data: CreateFeedRequestDto,
     ) -> Result<FeedResponseDto, ResponseError> {
         self.client.post("/feeds", Some(&data)).await
     }
 
-    pub async fn get(&self) -> Result<Option<Vec<FeedResponseDto>>, ResponseError> {
+    pub async fn get(self) -> Result<Option<Vec<FeedResponseDto>>, ResponseError> {
         self.client.get("/feeds").await
     }
 
     pub async fn delete(
-        &self,
+        self,
         data: DeleteSubscriberResponseDto,
     ) -> Result<Option<Vec<FeedResponseDto>>, ResponseError> {
         self.client.delete(format!("/feeds/{}", data.feed_id)).await

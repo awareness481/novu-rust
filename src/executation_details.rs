@@ -30,7 +30,7 @@ impl ExecutationDetails {
     }
 
     pub async fn get(
-        &self,
+        self,
         data: ExecutionDetailsRequestDto,
     ) -> Result<ExecutionDetailsResponseDto, ResponseError> {
         match qs::to_string(&data) {

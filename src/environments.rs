@@ -13,19 +13,19 @@ impl Environments {
         Self { client }
     }
 
-    pub async fn get_current(&self) -> Result<EnvironmentResponseDto, ResponseError> {
+    pub async fn get_current(self) -> Result<EnvironmentResponseDto, ResponseError> {
         self.client.get("/environments/me").await
     }
 
-    pub async fn get_all(&self) -> Result<Vec<EnvironmentResponseDto>, ResponseError> {
+    pub async fn get_all(self) -> Result<Vec<EnvironmentResponseDto>, ResponseError> {
         self.client.get("/environments").await
     }
 
-    pub async fn get_api_keys(&self) -> Result<Vec<ApiKey>, ResponseError> {
+    pub async fn get_api_keys(self) -> Result<Vec<ApiKey>, ResponseError> {
         self.client.get("/environments/api-keys").await
     }
 
-    pub async fn regenerate_api_keys(&self) -> Result<Vec<ApiKey>, ResponseError> {
+    pub async fn regenerate_api_keys(self) -> Result<Vec<ApiKey>, ResponseError> {
         self.client
             .post::<Vec<ApiKey>>("/environments/api-keys/regenerate", None::<&bool>)
             .await
