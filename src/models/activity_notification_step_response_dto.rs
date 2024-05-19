@@ -21,14 +21,3 @@ pub struct ActivityNotificationStepResponseDto {
     #[serde(rename = "template", skip_serializing_if = "Option::is_none")]
     pub template: Option<serde_json::Value>,
 }
-
-// impl ActivityNotificationStepResponseDto {
-//     pub fn new(_id: String, active: bool, filters: models::StepFilter) -> ActivityNotificationStepResponseDto {
-//         ActivityNotificationStepResponseDto {
-//             _id,
-//             active,
-//             filters: Box::new(filters),
-//             template: None,
-//         }
-//     }
-// }

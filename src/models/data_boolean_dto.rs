@@ -18,9 +18,6 @@ pub struct DataBooleanDto {
 
 impl DataBooleanDto {
     pub fn new(data: bool) -> DataBooleanDto {
-        DataBooleanDto {
-            data,
-        }
+        DataBooleanDto { data }
     }
 }
-

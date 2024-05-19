@@ -19,13 +19,3 @@ pub struct UpdateSubscriberPreferenceRequestDto {
     #[serde(rename = "enabled", skip_serializing_if = "Option::is_none")]
     pub enabled: Option<bool>,
 }
-
-impl UpdateSubscriberPreferenceRequestDto {
-    pub fn new() -> UpdateSubscriberPreferenceRequestDto {
-        UpdateSubscriberPreferenceRequestDto {
-            channel: None,
-            enabled: None,
-        }
-    }
-}
-

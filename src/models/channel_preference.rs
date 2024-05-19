@@ -22,10 +22,7 @@ pub struct ChannelPreference {
 
 impl ChannelPreference {
     pub fn new(r#type: Type, enabled: bool) -> ChannelPreference {
-        ChannelPreference {
-            r#type,
-            enabled,
-        }
+        ChannelPreference { r#type, enabled }
     }
 }
 /// The type of channel that is enabled or not
@@ -48,4 +45,3 @@ impl Default for Type {
         Self::InApp
     }
 }
-

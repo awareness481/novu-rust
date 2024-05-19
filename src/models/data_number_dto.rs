@@ -18,9 +18,6 @@ pub struct DataNumberDto {
 
 impl DataNumberDto {
     pub fn new(data: f64) -> DataNumberDto {
-        DataNumberDto {
-            data,
-        }
+        DataNumberDto { data }
     }
 }
-

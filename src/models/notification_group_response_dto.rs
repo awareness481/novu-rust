@@ -23,16 +23,3 @@ pub struct NotificationGroupResponseDto {
     #[serde(rename = "_parentId", skip_serializing_if = "Option::is_none")]
     pub _parent_id: Option<String>,
 }
-
-impl NotificationGroupResponseDto {
-    pub fn new(name: String, _environment_id: String, _organization_id: String) -> NotificationGroupResponseDto {
-        NotificationGroupResponseDto {
-            _id: None,
-            name,
-            _environment_id,
-            _organization_id,
-            _parent_id: None,
-        }
-    }
-}
-

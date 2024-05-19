@@ -22,17 +22,7 @@ pub struct EmailBlock {
     pub styles: Option<Box<models::EmailBlockStyles>>,
 }
 
-impl EmailBlock {
-    pub fn new(r#type: Type, content: String) -> EmailBlock {
-        EmailBlock {
-            r#type,
-            content,
-            url: None,
-            styles: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "text")]
@@ -46,4 +36,3 @@ impl Default for Type {
         Self::Text
     }
 }
-

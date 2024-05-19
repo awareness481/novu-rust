@@ -24,18 +24,7 @@ pub struct CreateOrganizationDto {
     pub product_use_cases: Option<serde_json::Value>,
 }
 
-impl CreateOrganizationDto {
-    pub fn new(name: String) -> CreateOrganizationDto {
-        CreateOrganizationDto {
-            name,
-            logo: None,
-            job_title: None,
-            domain: None,
-            product_use_cases: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum JobTitle {
     #[serde(rename = "engineer")]
@@ -61,4 +50,3 @@ impl Default for JobTitle {
         Self::Engineer
     }
 }
-

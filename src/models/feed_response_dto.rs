@@ -23,16 +23,3 @@ pub struct FeedResponseDto {
     #[serde(rename = "_organizationId")]
     pub _organization_id: String,
 }
-
-impl FeedResponseDto {
-    pub fn new(name: String, identifier: String, _environment_id: String, _organization_id: String) -> FeedResponseDto {
-        FeedResponseDto {
-            _id: None,
-            name,
-            identifier,
-            _environment_id,
-            _organization_id,
-        }
-    }
-}
-

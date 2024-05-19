@@ -31,20 +31,3 @@ pub struct UpdateWorkflowRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl UpdateWorkflowRequestDto {
-    pub fn new(name: String, notification_group_id: String) -> UpdateWorkflowRequestDto {
-        UpdateWorkflowRequestDto {
-            name,
-            tags: None,
-            description: None,
-            identifier: None,
-            steps: None,
-            notification_group_id,
-            critical: None,
-            preference_settings: None,
-            data: None,
-        }
-    }
-}
-

@@ -19,14 +19,17 @@ pub struct MessageMarkAsRequestDto {
 }
 
 impl MessageMarkAsRequestDto {
-    pub fn new(message_id: models::MarkMessageAsRequestDtoMessageId, mark_as: MarkAs) -> MessageMarkAsRequestDto {
+    pub fn new(
+        message_id: models::MarkMessageAsRequestDtoMessageId,
+        mark_as: MarkAs,
+    ) -> MessageMarkAsRequestDto {
         MessageMarkAsRequestDto {
             message_id: Box::new(message_id),
             mark_as,
         }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum MarkAs {
     #[serde(rename = "read")]
@@ -44,4 +47,3 @@ impl Default for MarkAs {
         Self::Read
     }
 }
-

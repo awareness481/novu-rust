@@ -20,16 +20,7 @@ pub struct MessageAction {
     pub result: Option<Box<models::MessageActionResult>>,
 }
 
-impl MessageAction {
-    pub fn new() -> MessageAction {
-        MessageAction {
-            status: None,
-            buttons: None,
-            result: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
     #[serde(rename = "pending")]
@@ -43,4 +34,3 @@ impl Default for Status {
         Self::Pending
     }
 }
-

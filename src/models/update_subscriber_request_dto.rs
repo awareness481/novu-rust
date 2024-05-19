@@ -27,18 +27,3 @@ pub struct UpdateSubscriberRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl UpdateSubscriberRequestDto {
-    pub fn new() -> UpdateSubscriberRequestDto {
-        UpdateSubscriberRequestDto {
-            email: None,
-            first_name: None,
-            last_name: None,
-            phone: None,
-            avatar: None,
-            locale: None,
-            data: None,
-        }
-    }
-}
-

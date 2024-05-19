@@ -32,7 +32,7 @@ impl FieldFilterPart {
         }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Operator {
     #[serde(rename = "LARGER")]
@@ -70,7 +70,7 @@ impl Default for Operator {
         Self::Larger
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum On {
     #[serde(rename = "subscriber")]
@@ -84,4 +84,3 @@ impl Default for On {
         Self::Subscriber
     }
 }
-

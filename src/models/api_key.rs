@@ -20,10 +20,6 @@ pub struct ApiKey {
 
 impl ApiKey {
     pub fn new(key: String, _user_id: String) -> ApiKey {
-        ApiKey {
-            key,
-            _user_id,
-        }
+        ApiKey { key, _user_id }
     }
 }
-

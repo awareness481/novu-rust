@@ -19,14 +19,3 @@ pub struct TranslationGroupRequestDto {
     #[serde(rename = "locales")]
     pub locales: Vec<Vec<String>>,
 }
-
-impl TranslationGroupRequestDto {
-    pub fn new(name: String, locales: Vec<Vec<String>>) -> TranslationGroupRequestDto {
-        TranslationGroupRequestDto {
-            name,
-            identifier: None,
-            locales,
-        }
-    }
-}
-

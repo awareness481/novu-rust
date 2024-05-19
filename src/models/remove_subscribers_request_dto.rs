@@ -19,9 +19,6 @@ pub struct RemoveSubscribersRequestDto {
 
 impl RemoveSubscribersRequestDto {
     pub fn new(subscribers: Vec<String>) -> RemoveSubscribersRequestDto {
-        RemoveSubscribersRequestDto {
-            subscribers,
-        }
+        RemoveSubscribersRequestDto { subscribers }
     }
 }
-

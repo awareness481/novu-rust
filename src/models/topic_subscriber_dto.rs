@@ -27,7 +27,14 @@ pub struct TopicSubscriberDto {
 }
 
 impl TopicSubscriberDto {
-    pub fn new(_organization_id: String, _environment_id: String, _subscriber_id: String, _topic_id: String, topic_key: String, external_subscriber_id: String) -> TopicSubscriberDto {
+    pub fn new(
+        _organization_id: String,
+        _environment_id: String,
+        _subscriber_id: String,
+        _topic_id: String,
+        topic_key: String,
+        external_subscriber_id: String,
+    ) -> TopicSubscriberDto {
         TopicSubscriberDto {
             _organization_id,
             _environment_id,
@@ -38,4 +45,3 @@ impl TopicSubscriberDto {
         }
     }
 }
-

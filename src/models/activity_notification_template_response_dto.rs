@@ -19,13 +19,3 @@ pub struct ActivityNotificationTemplateResponseDto {
     #[serde(rename = "triggers")]
     pub triggers: Vec<models::NotificationTrigger>,
 }
-
-// impl ActivityNotificationTemplateResponseDto {
-//     pub fn new(name: String, triggers: Vec<models::NotificationTrigger>) -> ActivityNotificationTemplateResponseDto {
-//         ActivityNotificationTemplateResponseDto {
-//             _id: None,
-//             name,
-//             triggers,
-//         }
-//     }
-// }

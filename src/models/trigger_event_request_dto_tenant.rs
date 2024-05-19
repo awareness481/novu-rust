@@ -25,4 +25,3 @@ impl Default for TriggerEventRequestDtoTenant {
         Self::String(Default::default())
     }
 }
-

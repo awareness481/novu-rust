@@ -23,16 +23,3 @@ pub struct UpdateBrandingDetailsDto {
     #[serde(rename = "fontFamily", skip_serializing_if = "Option::is_none")]
     pub font_family: Option<String>,
 }
-
-impl UpdateBrandingDetailsDto {
-    pub fn new(logo: String, color: String, font_color: String, content_background: String) -> UpdateBrandingDetailsDto {
-        UpdateBrandingDetailsDto {
-            logo,
-            color,
-            font_color,
-            content_background,
-            font_family: None,
-        }
-    }
-}
-

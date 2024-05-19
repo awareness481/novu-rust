@@ -23,7 +23,12 @@ pub struct StepFilter {
 }
 
 impl StepFilter {
-    pub fn new(is_negated: bool, r#type: Type, value: Value, children: Vec<models::FieldFilterPart>) -> StepFilter {
+    pub fn new(
+        is_negated: bool,
+        r#type: Type,
+        value: Value,
+        children: Vec<models::FieldFilterPart>,
+    ) -> StepFilter {
         StepFilter {
             is_negated,
             r#type,
@@ -32,7 +37,7 @@ impl StepFilter {
         }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "BOOLEAN")]
@@ -58,7 +63,7 @@ impl Default for Type {
         Self::Boolean
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Value {
     #[serde(rename = "AND")]
@@ -72,4 +77,3 @@ impl Default for Value {
         Self::And
     }
 }
-

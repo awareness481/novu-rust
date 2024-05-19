@@ -25,17 +25,3 @@ pub struct EnvironmentResponseDto {
     #[serde(rename = "_parentId")]
     pub _parent_id: String,
 }
-
-impl EnvironmentResponseDto {
-    pub fn new(name: String, _organization_id: String, identifier: String, _parent_id: String) -> EnvironmentResponseDto {
-        EnvironmentResponseDto {
-            _id: None,
-            name,
-            _organization_id,
-            identifier,
-            api_keys: None,
-            _parent_id,
-        }
-    }
-}
-

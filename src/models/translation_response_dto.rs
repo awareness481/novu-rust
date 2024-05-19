@@ -33,7 +33,17 @@ pub struct TranslationResponseDto {
 }
 
 impl TranslationResponseDto {
-    pub fn new(_id: String, created_at: String, updated_at: String, _environment_id: String, _organization_id: String, _group_id: String, iso_language: String, translations: String, file_name: String) -> TranslationResponseDto {
+    pub fn new(
+        _id: String,
+        created_at: String,
+        updated_at: String,
+        _environment_id: String,
+        _organization_id: String,
+        _group_id: String,
+        iso_language: String,
+        translations: String,
+        file_name: String,
+    ) -> TranslationResponseDto {
         TranslationResponseDto {
             _id,
             created_at,
@@ -47,4 +57,3 @@ impl TranslationResponseDto {
         }
     }
 }
-

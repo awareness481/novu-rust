@@ -18,18 +18,9 @@ pub struct OrganizationResponseDto {
     pub logo: Option<String>,
     #[serde(rename = "branding")]
     pub branding: Box<models::OrganizationBrandingResponseDto>,
-    #[serde(rename = "partnerConfigurations", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "partnerConfigurations",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub partner_configurations: Option<Vec<models::IPartnerConfigurationResponseDto>>,
 }
-
-impl OrganizationResponseDto {
-    pub fn new(name: String, branding: models::OrganizationBrandingResponseDto) -> OrganizationResponseDto {
-        OrganizationResponseDto {
-            name,
-            logo: None,
-            branding: Box::new(branding),
-            partner_configurations: None,
-        }
-    }
-}
-

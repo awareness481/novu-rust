@@ -23,7 +23,12 @@ pub struct ChangesResponseDto {
 }
 
 impl ChangesResponseDto {
-    pub fn new(total_count: f64, data: Vec<models::ChangeResponseDto>, page_size: f64, page: f64) -> ChangesResponseDto {
+    pub fn new(
+        total_count: f64,
+        data: Vec<models::ChangeResponseDto>,
+        page_size: f64,
+        page: f64,
+    ) -> ChangesResponseDto {
         ChangesResponseDto {
             total_count,
             data,
@@ -32,4 +37,3 @@ impl ChangesResponseDto {
         }
     }
 }
-

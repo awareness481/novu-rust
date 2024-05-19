@@ -23,7 +23,12 @@ pub struct WorkflowsResponseDto {
 }
 
 impl WorkflowsResponseDto {
-    pub fn new(total_count: f64, data: Vec<models::WorkflowResponse>, page_size: f64, page: f64) -> WorkflowsResponseDto {
+    pub fn new(
+        total_count: f64,
+        data: Vec<models::WorkflowResponse>,
+        page_size: f64,
+        page: f64,
+    ) -> WorkflowsResponseDto {
         WorkflowsResponseDto {
             total_count,
             data,
@@ -32,4 +37,3 @@ impl WorkflowsResponseDto {
         }
     }
 }
-

@@ -19,14 +19,3 @@ pub struct CreateTenantRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl CreateTenantRequestDto {
-    pub fn new(identifier: String, name: String) -> CreateTenantRequestDto {
-        CreateTenantRequestDto {
-            identifier,
-            name,
-            data: None,
-        }
-    }
-}
-

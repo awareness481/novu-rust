@@ -18,9 +18,6 @@ pub struct RenameOrganizationDto {
 
 impl RenameOrganizationDto {
     pub fn new(name: String) -> RenameOrganizationDto {
-        RenameOrganizationDto {
-            name,
-        }
+        RenameOrganizationDto { name }
     }
 }
-

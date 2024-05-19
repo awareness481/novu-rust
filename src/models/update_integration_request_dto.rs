@@ -28,17 +28,3 @@ pub struct UpdateIntegrationRequestDto {
     #[serde(rename = "conditions", skip_serializing_if = "Option::is_none")]
     pub conditions: Option<Vec<models::StepFilter>>,
 }
-
-impl UpdateIntegrationRequestDto {
-    pub fn new() -> UpdateIntegrationRequestDto {
-        UpdateIntegrationRequestDto {
-            name: None,
-            identifier: None,
-            _environment_id: None,
-            active: None,
-            credentials: None,
-            check: None,
-            conditions: None,
-        }
-    }
-}

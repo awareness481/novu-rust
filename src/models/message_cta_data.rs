@@ -15,12 +15,3 @@ pub struct MessageCtaData {
     #[serde(rename = "url", skip_serializing_if = "Option::is_none")]
     pub url: Option<String>,
 }
-
-impl MessageCtaData {
-    pub fn new() -> MessageCtaData {
-        MessageCtaData {
-            url: None,
-        }
-    }
-}
-

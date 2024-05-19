@@ -37,23 +37,3 @@ pub struct GetWorkflowOverrideResponseDto {
     #[serde(rename = "updatedAt")]
     pub updated_at: String,
 }
-
-impl GetWorkflowOverrideResponseDto {
-    pub fn new(_id: String, _organization_id: String, _environment_id: String, _workflow_id: String, _tenant_id: String, active: bool, preference_settings: models::PreferenceChannels, deleted: bool, created_at: String, updated_at: String) -> GetWorkflowOverrideResponseDto {
-        GetWorkflowOverrideResponseDto {
-            _id,
-            _organization_id,
-            _environment_id,
-            _workflow_id,
-            _tenant_id,
-            active,
-            preference_settings: Box::new(preference_settings),
-            deleted,
-            deleted_at: None,
-            deleted_by: None,
-            created_at,
-            updated_at,
-        }
-    }
-}
-

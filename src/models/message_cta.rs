@@ -20,16 +20,7 @@ pub struct MessageCta {
     pub action: Option<Box<models::MessageAction>>,
 }
 
-impl MessageCta {
-    pub fn new(data: models::MessageCtaData) -> MessageCta {
-        MessageCta {
-            r#type: None,
-            data: Box::new(data),
-            action: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "redirect")]
@@ -41,4 +32,3 @@ impl Default for Type {
         Self::Redirect
     }
 }
-

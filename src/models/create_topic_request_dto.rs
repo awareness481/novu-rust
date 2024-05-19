@@ -22,10 +22,6 @@ pub struct CreateTopicRequestDto {
 
 impl CreateTopicRequestDto {
     pub fn new(key: String, name: String) -> CreateTopicRequestDto {
-        CreateTopicRequestDto {
-            key,
-            name,
-        }
+        CreateTopicRequestDto { key, name }
     }
 }
-

@@ -42,27 +42,7 @@ pub struct IntegrationResponseDto {
     pub conditions: Option<Vec<models::StepFilter>>,
 }
 
-impl IntegrationResponseDto {
-    pub fn new(_environment_id: String, _organization_id: String, name: String, identifier: String, provider_id: String, channel: Channel, credentials: models::CredentialsDto, active: bool, deleted: bool, deleted_at: String, deleted_by: String, primary: bool) -> IntegrationResponseDto {
-        IntegrationResponseDto {
-            _id: None,
-            _environment_id,
-            _organization_id,
-            name,
-            identifier,
-            provider_id,
-            channel,
-            credentials: Box::new(credentials),
-            active,
-            deleted,
-            deleted_at,
-            deleted_by,
-            primary,
-            conditions: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channel {
     #[serde(rename = "in_app")]
@@ -82,4 +62,3 @@ impl Default for Channel {
         Self::InApp
     }
 }
-

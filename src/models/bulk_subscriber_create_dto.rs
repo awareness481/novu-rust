@@ -18,9 +18,6 @@ pub struct BulkSubscriberCreateDto {
 
 impl BulkSubscriberCreateDto {
     pub fn new(subscribers: Vec<models::CreateSubscriberRequestDto>) -> BulkSubscriberCreateDto {
-        BulkSubscriberCreateDto {
-            subscribers,
-        }
+        BulkSubscriberCreateDto { subscribers }
     }
 }
-

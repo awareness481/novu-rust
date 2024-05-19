@@ -18,9 +18,6 @@ pub struct UnseenCountResponse {
 
 impl UnseenCountResponse {
     pub fn new(count: f64) -> UnseenCountResponse {
-        UnseenCountResponse {
-            count,
-        }
+        UnseenCountResponse { count }
     }
 }
-

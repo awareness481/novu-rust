@@ -31,23 +31,7 @@ pub struct ActivityNotificationResponseDto {
     #[serde(rename = "jobs", skip_serializing_if = "Option::is_none")]
     pub jobs: Option<Vec<models::ActivityNotificationJobResponseDto>>,
 }
-
-impl ActivityNotificationResponseDto {
-    pub fn new(_environment_id: String, _organization_id: String, transaction_id: String) -> ActivityNotificationResponseDto {
-        ActivityNotificationResponseDto {
-            _id: None,
-            _environment_id,
-            _organization_id,
-            transaction_id,
-            created_at: None,
-            channels: None,
-            subscriber: None,
-            template: None,
-            jobs: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channels {
     #[serde(rename = "in_app")]
@@ -75,4 +59,3 @@ impl Default for Channels {
         Self::InApp
     }
 }
-

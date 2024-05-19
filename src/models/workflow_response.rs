@@ -52,35 +52,9 @@ pub struct WorkflowResponse {
     pub notification_group: Option<Box<models::NotificationGroup>>,
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
-    #[serde(rename = "workflowIntegrationStatus", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "workflowIntegrationStatus",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub workflow_integration_status: Option<serde_json::Value>,
 }
-
-impl WorkflowResponse {
-    pub fn new(name: String, description: String, active: bool, draft: bool, preference_settings: models::PreferenceChannels, critical: bool, tags: Vec<String>, steps: Vec<models::NotificationStep>, _organization_id: String, _creator_id: String, _environment_id: String, triggers: Vec<models::NotificationTrigger>, _notification_group_id: String, deleted: bool, deleted_at: String, deleted_by: String) -> WorkflowResponse {
-        WorkflowResponse {
-            _id: None,
-            name,
-            description,
-            active,
-            draft,
-            preference_settings: Box::new(preference_settings),
-            critical,
-            tags,
-            steps,
-            _organization_id,
-            _creator_id,
-            _environment_id,
-            triggers,
-            _notification_group_id,
-            _parent_id: None,
-            deleted,
-            deleted_at,
-            deleted_by,
-            notification_group: None,
-            data: None,
-            workflow_integration_status: None,
-        }
-    }
-}
-

@@ -18,9 +18,6 @@ pub struct NotificationTriggerVariable {
 
 impl NotificationTriggerVariable {
     pub fn new(name: String) -> NotificationTriggerVariable {
-        NotificationTriggerVariable {
-            name,
-        }
+        NotificationTriggerVariable { name }
     }
 }
-

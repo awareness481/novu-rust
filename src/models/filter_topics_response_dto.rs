@@ -23,7 +23,12 @@ pub struct FilterTopicsResponseDto {
 }
 
 impl FilterTopicsResponseDto {
-    pub fn new(data: Vec<models::TopicDto>, page: f64, page_size: f64, total_count: f64) -> FilterTopicsResponseDto {
+    pub fn new(
+        data: Vec<models::TopicDto>,
+        page: f64,
+        page_size: f64,
+        total_count: f64,
+    ) -> FilterTopicsResponseDto {
         FilterTopicsResponseDto {
             data,
             page,
@@ -32,4 +37,3 @@ impl FilterTopicsResponseDto {
         }
     }
 }
-

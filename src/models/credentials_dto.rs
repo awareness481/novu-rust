@@ -64,9 +64,15 @@ pub struct CredentialsDto {
     pub service_account: Option<String>,
     #[serde(rename = "ipPoolName", skip_serializing_if = "Option::is_none")]
     pub ip_pool_name: Option<String>,
-    #[serde(rename = "apiKeyRequestHeader", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "apiKeyRequestHeader",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub api_key_request_header: Option<String>,
-    #[serde(rename = "secretKeyRequestHeader", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "secretKeyRequestHeader",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub secret_key_request_header: Option<String>,
     #[serde(rename = "idPath", skip_serializing_if = "Option::is_none")]
     pub id_path: Option<String>,
@@ -74,9 +80,15 @@ pub struct CredentialsDto {
     pub date_path: Option<String>,
     #[serde(rename = "apiToken", skip_serializing_if = "Option::is_none")]
     pub api_token: Option<String>,
-    #[serde(rename = "authenticateByToken", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "authenticateByToken",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub authenticate_by_token: Option<bool>,
-    #[serde(rename = "authenticationTokenKey", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "authenticationTokenKey",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub authentication_token_key: Option<String>,
     #[serde(rename = "instanceId", skip_serializing_if = "Option::is_none")]
     pub instance_id: Option<String>,
@@ -92,55 +104,9 @@ pub struct CredentialsDto {
     pub external_link: Option<String>,
     #[serde(rename = "channelId", skip_serializing_if = "Option::is_none")]
     pub channel_id: Option<String>,
-    #[serde(rename = "phoneNumberIdentification", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "phoneNumberIdentification",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub phone_number_identification: Option<String>,
 }
-
-impl CredentialsDto {
-    pub fn new() -> CredentialsDto {
-        CredentialsDto {
-            api_key: None,
-            user: None,
-            secret_key: None,
-            domain: None,
-            password: None,
-            host: None,
-            port: None,
-            secure: None,
-            region: None,
-            account_sid: None,
-            message_profile_id: None,
-            token: None,
-            from: None,
-            sender_name: None,
-            project_name: None,
-            application_id: None,
-            client_id: None,
-            require_tls: None,
-            ignore_tls: None,
-            tls_options: None,
-            base_url: None,
-            webhook_url: None,
-            redirect_url: None,
-            hmac: None,
-            service_account: None,
-            ip_pool_name: None,
-            api_key_request_header: None,
-            secret_key_request_header: None,
-            id_path: None,
-            date_path: None,
-            api_token: None,
-            authenticate_by_token: None,
-            authentication_token_key: None,
-            instance_id: None,
-            alert_uid: None,
-            title: None,
-            image_url: None,
-            state: None,
-            external_link: None,
-            channel_id: None,
-            phone_number_identification: None,
-        }
-    }
-}
-

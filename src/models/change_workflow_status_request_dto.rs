@@ -18,9 +18,6 @@ pub struct ChangeWorkflowStatusRequestDto {
 
 impl ChangeWorkflowStatusRequestDto {
     pub fn new(active: bool) -> ChangeWorkflowStatusRequestDto {
-        ChangeWorkflowStatusRequestDto {
-            active,
-        }
+        ChangeWorkflowStatusRequestDto { active }
     }
 }
-

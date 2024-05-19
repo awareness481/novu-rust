@@ -24,4 +24,3 @@ impl Default for MarkAllMessageAsRequestDtoFeedIdentifier {
         Self::String(Default::default())
     }
 }
-

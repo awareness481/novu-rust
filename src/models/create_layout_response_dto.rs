@@ -18,9 +18,6 @@ pub struct CreateLayoutResponseDto {
 
 impl CreateLayoutResponseDto {
     pub fn new(_id: String) -> CreateLayoutResponseDto {
-        CreateLayoutResponseDto {
-            _id,
-        }
+        CreateLayoutResponseDto { _id }
     }
 }
-

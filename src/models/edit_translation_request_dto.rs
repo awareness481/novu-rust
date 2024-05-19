@@ -17,13 +17,3 @@ pub struct EditTranslationRequestDto {
     #[serde(rename = "translation", skip_serializing_if = "Option::is_none")]
     pub translation: Option<String>,
 }
-
-impl EditTranslationRequestDto {
-    pub fn new() -> EditTranslationRequestDto {
-        EditTranslationRequestDto {
-            file_name: None,
-            translation: None,
-        }
-    }
-}
-

@@ -18,9 +18,6 @@ pub struct CreateFeedRequestDto {
 
 impl CreateFeedRequestDto {
     pub fn new(name: String) -> CreateFeedRequestDto {
-        CreateFeedRequestDto {
-            name,
-        }
+        CreateFeedRequestDto { name }
     }
 }
-

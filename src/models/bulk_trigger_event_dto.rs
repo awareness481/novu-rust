@@ -18,9 +18,6 @@ pub struct BulkTriggerEventDto {
 
 impl BulkTriggerEventDto {
     pub fn new(events: Vec<models::TriggerEventRequestDto>) -> BulkTriggerEventDto {
-        BulkTriggerEventDto {
-            events,
-        }
+        BulkTriggerEventDto { events }
     }
 }
-

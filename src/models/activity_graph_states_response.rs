@@ -23,7 +23,12 @@ pub struct ActivityGraphStatesResponse {
 }
 
 impl ActivityGraphStatesResponse {
-    pub fn new(_id: String, count: f64, templates: Vec<String>, channels: Vec<Channels>) -> ActivityGraphStatesResponse {
+    pub fn new(
+        _id: String,
+        count: f64,
+        templates: Vec<String>,
+        channels: Vec<Channels>,
+    ) -> ActivityGraphStatesResponse {
         ActivityGraphStatesResponse {
             _id,
             count,
@@ -32,7 +37,7 @@ impl ActivityGraphStatesResponse {
         }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channels {
     #[serde(rename = "in_app")]
@@ -52,4 +57,3 @@ impl Default for Channels {
         Self::InApp
     }
 }
-

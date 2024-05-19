@@ -18,9 +18,6 @@ pub struct BulkApplyChangeDto {
 
 impl BulkApplyChangeDto {
     pub fn new(change_ids: Vec<String>) -> BulkApplyChangeDto {
-        BulkApplyChangeDto {
-            change_ids,
-        }
+        BulkApplyChangeDto { change_ids }
     }
 }
-

@@ -17,13 +17,3 @@ pub struct MarkMessageFields {
     #[serde(rename = "read", skip_serializing_if = "Option::is_none")]
     pub read: Option<bool>,
 }
-
-impl MarkMessageFields {
-    pub fn new() -> MarkMessageFields {
-        MarkMessageFields {
-            seen: None,
-            read: None,
-        }
-    }
-}
-

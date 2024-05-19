@@ -31,17 +31,3 @@ pub struct UpdateLayoutRequestDto {
     #[serde(rename = "isDefault", skip_serializing_if = "Option::is_none")]
     pub is_default: Option<bool>,
 }
-
-impl UpdateLayoutRequestDto {
-    pub fn new(identifier: String) -> UpdateLayoutRequestDto {
-        UpdateLayoutRequestDto {
-            name: None,
-            identifier,
-            description: None,
-            content: None,
-            variables: None,
-            is_default: None,
-        }
-    }
-}
-

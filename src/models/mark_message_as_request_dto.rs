@@ -19,11 +19,13 @@ pub struct MarkMessageAsRequestDto {
 }
 
 impl MarkMessageAsRequestDto {
-    pub fn new(message_id: models::MarkMessageAsRequestDtoMessageId, mark: models::MarkMessageFields) -> MarkMessageAsRequestDto {
+    pub fn new(
+        message_id: models::MarkMessageAsRequestDtoMessageId,
+        mark: models::MarkMessageFields,
+    ) -> MarkMessageAsRequestDto {
         MarkMessageAsRequestDto {
             message_id: Box::new(message_id),
             mark: Box::new(mark),
         }
     }
 }
-

@@ -23,16 +23,3 @@ pub struct MemberInviteDto {
     #[serde(rename = "_inviterId")]
     pub _inviter_id: String,
 }
-
-impl MemberInviteDto {
-    pub fn new(email: String, token: String, invitation_date: String, _inviter_id: String) -> MemberInviteDto {
-        MemberInviteDto {
-            email,
-            token,
-            invitation_date,
-            answer_date: None,
-            _inviter_id,
-        }
-    }
-}
-

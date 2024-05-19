@@ -19,9 +19,6 @@ pub struct AddSubscribersRequestDto {
 
 impl AddSubscribersRequestDto {
     pub fn new(subscribers: Vec<String>) -> AddSubscribersRequestDto {
-        AddSubscribersRequestDto {
-            subscribers,
-        }
+        AddSubscribersRequestDto { subscribers }
     }
 }
-

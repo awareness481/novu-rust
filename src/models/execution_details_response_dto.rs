@@ -48,30 +48,7 @@ pub struct ExecutionDetailsResponseDto {
     pub created_at: Option<String>,
 }
 
-impl ExecutionDetailsResponseDto {
-    pub fn new(_organization_id: String, _job_id: String, _environment_id: String, _notification_id: String, _notification_template_id: String, _subscriber_id: String, transaction_id: String, channel: Channel, detail: String, source: Source, status: Status, is_test: bool, is_retry: bool) -> ExecutionDetailsResponseDto {
-        ExecutionDetailsResponseDto {
-            _id: None,
-            _organization_id,
-            _job_id,
-            _environment_id,
-            _notification_id,
-            _notification_template_id,
-            _subscriber_id,
-            _message_id: None,
-            provider_id: None,
-            transaction_id,
-            channel,
-            detail,
-            source,
-            status,
-            is_test,
-            is_retry,
-            created_at: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channel {
     #[serde(rename = "in_app")]
@@ -99,7 +76,7 @@ impl Default for Channel {
         Self::InApp
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Source {
     #[serde(rename = "Credentials")]
@@ -117,7 +94,7 @@ impl Default for Source {
         Self::Credentials
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
     #[serde(rename = "Success")]
@@ -139,4 +116,3 @@ impl Default for Status {
         Self::Success
     }
 }
-

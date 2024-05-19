@@ -20,13 +20,10 @@ pub struct DelayScheduledMetadata {
 
 impl DelayScheduledMetadata {
     pub fn new(r#type: Type, delay_path: String) -> DelayScheduledMetadata {
-        DelayScheduledMetadata {
-            r#type,
-            delay_path,
-        }
+        DelayScheduledMetadata { r#type, delay_path }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "scheduled")]
@@ -38,4 +35,3 @@ impl Default for Type {
         Self::Scheduled
     }
 }
-

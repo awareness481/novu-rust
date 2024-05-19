@@ -23,16 +23,3 @@ pub struct PreferenceChannels {
     #[serde(rename = "push", skip_serializing_if = "Option::is_none")]
     pub push: Option<bool>,
 }
-
-impl PreferenceChannels {
-    pub fn new() -> PreferenceChannels {
-        PreferenceChannels {
-            email: None,
-            sms: None,
-            in_app: None,
-            chat: None,
-            push: None,
-        }
-    }
-}
-

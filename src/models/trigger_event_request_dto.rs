@@ -32,18 +32,3 @@ pub struct TriggerEventRequestDto {
     #[serde(rename = "tenant", skip_serializing_if = "Option::is_none")]
     pub tenant: Option<Box<models::TriggerEventRequestDtoTenant>>,
 }
-
-impl TriggerEventRequestDto {
-    pub fn new(name: String, to: Vec<Vec<String>>) -> TriggerEventRequestDto {
-        TriggerEventRequestDto {
-            name,
-            payload: None,
-            overrides: None,
-            to,
-            transaction_id: None,
-            actor: None,
-            tenant: None,
-        }
-    }
-}
-

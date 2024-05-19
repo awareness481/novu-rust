@@ -25,17 +25,3 @@ pub struct TopicDto {
     #[serde(rename = "subscribers")]
     pub subscribers: Vec<String>,
 }
-
-impl TopicDto {
-    pub fn new(_organization_id: String, _environment_id: String, key: String, name: String, subscribers: Vec<String>) -> TopicDto {
-        TopicDto {
-            _id: None,
-            _organization_id,
-            _environment_id,
-            key,
-            name,
-            subscribers,
-        }
-    }
-}
-

@@ -34,23 +34,7 @@ pub struct ChangeResponseDto {
     pub _parent_id: Option<String>,
 }
 
-impl ChangeResponseDto {
-    pub fn new(_creator_id: String, _environment_id: String, _organization_id: String, _entity_id: String, enabled: bool, r#type: Type, change: serde_json::Value, created_at: String) -> ChangeResponseDto {
-        ChangeResponseDto {
-            _id: None,
-            _creator_id,
-            _environment_id,
-            _organization_id,
-            _entity_id,
-            enabled,
-            r#type,
-            change,
-            created_at,
-            _parent_id: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "Feed")]
@@ -76,4 +60,3 @@ impl Default for Type {
         Self::Feed
     }
 }
-

@@ -20,16 +20,7 @@ pub struct MessageButton {
     pub result_content: Option<String>,
 }
 
-impl MessageButton {
-    pub fn new(r#type: Type, content: String) -> MessageButton {
-        MessageButton {
-            r#type,
-            content,
-            result_content: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "primary")]
@@ -45,4 +36,3 @@ impl Default for Type {
         Self::Primary
     }
 }
-

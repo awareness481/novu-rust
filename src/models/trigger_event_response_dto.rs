@@ -26,16 +26,6 @@ pub struct TriggerEventResponseDto {
     pub transaction_id: Option<String>,
 }
 
-impl TriggerEventResponseDto {
-    pub fn new(acknowledged: bool, status: Status) -> TriggerEventResponseDto {
-        TriggerEventResponseDto {
-            acknowledged,
-            status,
-            error: None,
-            transaction_id: None,
-        }
-    }
-}
 /// Status for trigger
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
@@ -60,4 +50,3 @@ impl Default for Status {
         Self::Error
     }
 }
-

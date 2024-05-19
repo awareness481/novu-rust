@@ -24,18 +24,6 @@ pub struct IPartnerConfigurationResponseDto {
     #[serde(rename = "partnerType")]
     pub partner_type: PartnerType,
 }
-
-impl IPartnerConfigurationResponseDto {
-    pub fn new(access_token: String, configuration_id: String, partner_type: PartnerType) -> IPartnerConfigurationResponseDto {
-        IPartnerConfigurationResponseDto {
-            project_ids: None,
-            access_token,
-            configuration_id,
-            team_id: None,
-            partner_type,
-        }
-    }
-}
 /// Partner Type Enum
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum PartnerType {
@@ -48,4 +36,3 @@ impl Default for PartnerType {
         Self::Vercel
     }
 }
-

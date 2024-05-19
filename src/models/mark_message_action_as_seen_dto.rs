@@ -19,15 +19,6 @@ pub struct MarkMessageActionAsSeenDto {
     #[serde(rename = "payload", skip_serializing_if = "Option::is_none")]
     pub payload: Option<serde_json::Value>,
 }
-
-impl MarkMessageActionAsSeenDto {
-    pub fn new(status: Status) -> MarkMessageActionAsSeenDto {
-        MarkMessageActionAsSeenDto {
-            status,
-            payload: None,
-        }
-    }
-}
 /// Message action status
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
@@ -42,4 +33,3 @@ impl Default for Status {
         Self::Pending
     }
 }
-

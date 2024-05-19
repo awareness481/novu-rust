@@ -25,4 +25,3 @@ impl Default for TriggerEventRequestDtoActor {
         Self::String(Default::default())
     }
 }
-

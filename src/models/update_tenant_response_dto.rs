@@ -27,18 +27,3 @@ pub struct UpdateTenantResponseDto {
     #[serde(rename = "updatedAt")]
     pub updated_at: String,
 }
-
-impl UpdateTenantResponseDto {
-    pub fn new(_id: String, identifier: String, _environment_id: String, created_at: String, updated_at: String) -> UpdateTenantResponseDto {
-        UpdateTenantResponseDto {
-            _id,
-            identifier,
-            name: None,
-            data: None,
-            _environment_id,
-            created_at,
-            updated_at,
-        }
-    }
-}
-

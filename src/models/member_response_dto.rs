@@ -28,20 +28,7 @@ pub struct MemberResponseDto {
     pub _organization_id: String,
 }
 
-impl MemberResponseDto {
-    pub fn new(_id: String, _user_id: String, _organization_id: String) -> MemberResponseDto {
-        MemberResponseDto {
-            _id,
-            _user_id,
-            user: None,
-            roles: None,
-            invite: None,
-            member_status: None,
-            _organization_id,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Roles {
     #[serde(rename = "admin")]
@@ -55,7 +42,7 @@ impl Default for Roles {
         Self::Admin
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum MemberStatus {
     #[serde(rename = "new")]
@@ -71,4 +58,3 @@ impl Default for MemberStatus {
         Self::New
     }
 }
-

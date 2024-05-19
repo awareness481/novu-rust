@@ -35,22 +35,3 @@ pub struct NotificationStepVariant {
     #[serde(rename = "replyCallback", skip_serializing_if = "Option::is_none")]
     pub reply_callback: Option<serde_json::Value>,
 }
-
-impl NotificationStepVariant {
-    pub fn new() -> NotificationStepVariant {
-        NotificationStepVariant {
-            _id: None,
-            uuid: None,
-            name: None,
-            _template_id: None,
-            active: None,
-            should_stop_on_fail: None,
-            template: None,
-            filters: None,
-            _parent_id: None,
-            metadata: None,
-            reply_callback: None,
-        }
-    }
-}
-

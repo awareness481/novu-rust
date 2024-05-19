@@ -23,7 +23,12 @@ pub struct FilterLayoutsResponseDto {
 }
 
 impl FilterLayoutsResponseDto {
-    pub fn new(data: Vec<models::LayoutDto>, page: f64, page_size: f64, total_count: f64) -> FilterLayoutsResponseDto {
+    pub fn new(
+        data: Vec<models::LayoutDto>,
+        page: f64,
+        page_size: f64,
+        total_count: f64,
+    ) -> FilterLayoutsResponseDto {
         FilterLayoutsResponseDto {
             data,
             page,
@@ -32,4 +37,3 @@ impl FilterLayoutsResponseDto {
         }
     }
 }
-

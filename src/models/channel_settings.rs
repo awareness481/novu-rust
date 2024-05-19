@@ -16,7 +16,10 @@ pub struct ChannelSettings {
     #[serde(rename = "providerId")]
     pub provider_id: ProviderId,
     /// The integration identifier
-    #[serde(rename = "integrationIdentifier", skip_serializing_if = "Option::is_none")]
+    #[serde(
+        rename = "integrationIdentifier",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub integration_identifier: Option<String>,
     /// Credentials payload for the specified provider
     #[serde(rename = "credentials")]
@@ -27,7 +30,11 @@ pub struct ChannelSettings {
 }
 
 impl ChannelSettings {
-    pub fn new(provider_id: ProviderId, credentials: models::ChannelCredentials, _integration_id: String) -> ChannelSettings {
+    pub fn new(
+        provider_id: ProviderId,
+        credentials: models::ChannelCredentials,
+        _integration_id: String,
+    ) -> ChannelSettings {
         ChannelSettings {
             provider_id,
             integration_identifier: None,
@@ -80,4 +87,3 @@ impl Default for ProviderId {
         Self::Slack
     }
 }
-

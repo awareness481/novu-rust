@@ -22,4 +22,3 @@ impl Default for MarkMessageAsRequestDtoMessageId {
         Self::String(Default::default())
     }
 }
-

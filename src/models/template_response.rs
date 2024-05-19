@@ -27,7 +27,12 @@ pub struct TemplateResponse {
 }
 
 impl TemplateResponse {
-    pub fn new(_id: String, name: String, critical: bool, triggers: Vec<String>) -> TemplateResponse {
+    pub fn new(
+        _id: String,
+        name: String,
+        critical: bool,
+        triggers: Vec<String>,
+    ) -> TemplateResponse {
         TemplateResponse {
             _id,
             name,
@@ -36,4 +41,3 @@ impl TemplateResponse {
         }
     }
 }
-

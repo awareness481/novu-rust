@@ -23,7 +23,12 @@ pub struct GetWorkflowOverridesResponseDto {
 }
 
 impl GetWorkflowOverridesResponseDto {
-    pub fn new(has_more: bool, data: Vec<models::OverrideResponseDto>, page_size: f64, page: f64) -> GetWorkflowOverridesResponseDto {
+    pub fn new(
+        has_more: bool,
+        data: Vec<models::OverrideResponseDto>,
+        page_size: f64,
+        page: f64,
+    ) -> GetWorkflowOverridesResponseDto {
         GetWorkflowOverridesResponseDto {
             has_more,
             data,
@@ -32,4 +37,3 @@ impl GetWorkflowOverridesResponseDto {
         }
     }
 }
-

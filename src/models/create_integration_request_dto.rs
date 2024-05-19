@@ -33,22 +33,7 @@ pub struct CreateIntegrationRequestDto {
     pub conditions: Option<Vec<models::StepFilter>>,
 }
 
-impl CreateIntegrationRequestDto {
-    pub fn new(provider_id: String, channel: Channel) -> CreateIntegrationRequestDto {
-        CreateIntegrationRequestDto {
-            name: None,
-            identifier: None,
-            _environment_id: None,
-            provider_id,
-            channel,
-            credentials: None,
-            active: None,
-            check: None,
-            conditions: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channel {
     #[serde(rename = "in_app")]
@@ -68,4 +53,3 @@ impl Default for Channel {
         Self::InApp
     }
 }
-

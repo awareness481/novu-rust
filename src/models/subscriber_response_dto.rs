@@ -50,28 +50,3 @@ pub struct SubscriberResponseDto {
     #[serde(rename = "__v", skip_serializing_if = "Option::is_none")]
     pub __v: Option<f64>,
 }
-
-impl SubscriberResponseDto {
-    pub fn new(subscriber_id: String, _organization_id: String, _environment_id: String, deleted: bool, created_at: String, updated_at: String) -> SubscriberResponseDto {
-        SubscriberResponseDto {
-            _id: None,
-            first_name: None,
-            last_name: None,
-            email: None,
-            phone: None,
-            avatar: None,
-            locale: None,
-            subscriber_id,
-            channels: None,
-            is_online: None,
-            last_online_at: None,
-            _organization_id,
-            _environment_id,
-            deleted,
-            created_at,
-            updated_at,
-            __v: None,
-        }
-    }
-}
-

@@ -29,17 +29,3 @@ pub struct TriggerEventToAllRequestDto {
     #[serde(rename = "tenant", skip_serializing_if = "Option::is_none")]
     pub tenant: Option<Box<models::TriggerEventRequestDtoTenant>>,
 }
-
-impl TriggerEventToAllRequestDto {
-    pub fn new(name: String, payload: serde_json::Value) -> TriggerEventToAllRequestDto {
-        TriggerEventToAllRequestDto {
-            name,
-            payload,
-            overrides: None,
-            transaction_id: None,
-            actor: None,
-            tenant: None,
-        }
-    }
-}
-

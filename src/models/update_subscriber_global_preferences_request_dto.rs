@@ -19,13 +19,3 @@ pub struct UpdateSubscriberGlobalPreferencesRequestDto {
     #[serde(rename = "preferences", skip_serializing_if = "Option::is_none")]
     pub preferences: Option<Vec<models::ChannelPreference>>,
 }
-
-impl UpdateSubscriberGlobalPreferencesRequestDto {
-    pub fn new() -> UpdateSubscriberGlobalPreferencesRequestDto {
-        UpdateSubscriberGlobalPreferencesRequestDto {
-            enabled: None,
-            preferences: None,
-        }
-    }
-}
-

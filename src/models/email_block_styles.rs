@@ -16,14 +16,7 @@ pub struct EmailBlockStyles {
     pub text_align: Option<TextAlign>,
 }
 
-impl EmailBlockStyles {
-    pub fn new() -> EmailBlockStyles {
-        EmailBlockStyles {
-            text_align: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum TextAlign {
     #[serde(rename = "left")]
@@ -39,4 +32,3 @@ impl Default for TextAlign {
         Self::Left
     }
 }
-

@@ -46,29 +46,7 @@ pub struct LayoutDto {
     pub _parent_id: Option<String>,
 }
 
-impl LayoutDto {
-    pub fn new(_organization_id: String, _environment_id: String, _creator_id: String, name: String, identifier: String, channel: Channel, content: String, content_type: String, is_default: bool, is_deleted: bool) -> LayoutDto {
-        LayoutDto {
-            _id: None,
-            _organization_id,
-            _environment_id,
-            _creator_id,
-            name,
-            identifier,
-            description: None,
-            channel,
-            content,
-            content_type,
-            variables: None,
-            is_default,
-            is_deleted,
-            created_at: None,
-            updated_at: None,
-            _parent_id: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channel {
     #[serde(rename = "in_app")]
@@ -88,4 +66,3 @@ impl Default for Channel {
         Self::InApp
     }
 }
-

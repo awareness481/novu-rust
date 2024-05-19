@@ -31,19 +31,3 @@ pub struct CreateSubscriberRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl CreateSubscriberRequestDto {
-    pub fn new(subscriber_id: String) -> CreateSubscriberRequestDto {
-        CreateSubscriberRequestDto {
-            subscriber_id,
-            email: None,
-            first_name: None,
-            last_name: None,
-            phone: None,
-            avatar: None,
-            locale: None,
-            data: None,
-        }
-    }
-}
-

@@ -23,7 +23,12 @@ pub struct ActivitiesResponseDto {
 }
 
 impl ActivitiesResponseDto {
-    pub fn new(has_more: bool, data: Vec<models::ActivityNotificationResponseDto>, page_size: f64, page: f64) -> ActivitiesResponseDto {
+    pub fn new(
+        has_more: bool,
+        data: Vec<models::ActivityNotificationResponseDto>,
+        page_size: f64,
+        page: f64,
+    ) -> ActivitiesResponseDto {
         ActivitiesResponseDto {
             has_more,
             data,
@@ -32,4 +37,3 @@ impl ActivitiesResponseDto {
         }
     }
 }
-

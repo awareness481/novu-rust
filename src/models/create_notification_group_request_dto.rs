@@ -18,9 +18,6 @@ pub struct CreateNotificationGroupRequestDto {
 
 impl CreateNotificationGroupRequestDto {
     pub fn new(name: String) -> CreateNotificationGroupRequestDto {
-        CreateNotificationGroupRequestDto {
-            name,
-        }
+        CreateNotificationGroupRequestDto { name }
     }
 }
-

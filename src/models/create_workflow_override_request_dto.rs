@@ -21,15 +21,3 @@ pub struct CreateWorkflowOverrideRequestDto {
     #[serde(rename = "preferenceSettings", skip_serializing_if = "Option::is_none")]
     pub preference_settings: Option<Box<models::PreferenceChannels>>,
 }
-
-impl CreateWorkflowOverrideRequestDto {
-    pub fn new(workflow_id: String, tenant_id: String) -> CreateWorkflowOverrideRequestDto {
-        CreateWorkflowOverrideRequestDto {
-            workflow_id,
-            tenant_id,
-            active: None,
-            preference_settings: None,
-        }
-    }
-}
-

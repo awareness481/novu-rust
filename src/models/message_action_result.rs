@@ -18,15 +18,7 @@ pub struct MessageActionResult {
     pub r#type: Option<Type>,
 }
 
-impl MessageActionResult {
-    pub fn new() -> MessageActionResult {
-        MessageActionResult {
-            payload: None,
-            r#type: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "primary")]
@@ -42,4 +34,3 @@ impl Default for Type {
         Self::Primary
     }
 }
-

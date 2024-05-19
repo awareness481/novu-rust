@@ -24,7 +24,7 @@ impl Default for NotificationStepVariantMetadata {
         Self::DigestRegularMetadata(Default::default())
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Unit {
     #[serde(rename = "seconds")]
@@ -46,7 +46,7 @@ impl Default for Unit {
         Self::Seconds
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "regular")]
@@ -64,7 +64,7 @@ impl Default for Type {
         Self::Regular
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum BackoffUnit {
     #[serde(rename = "seconds")]
@@ -86,4 +86,3 @@ impl Default for BackoffUnit {
         Self::Seconds
     }
 }
-

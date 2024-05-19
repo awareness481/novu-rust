@@ -37,19 +37,3 @@ pub struct ChannelCredentials {
     #[serde(rename = "externalUrl", skip_serializing_if = "Option::is_none")]
     pub external_url: Option<String>,
 }
-
-impl ChannelCredentials {
-    pub fn new(webhook_url: String) -> ChannelCredentials {
-        ChannelCredentials {
-            webhook_url,
-            channel: None,
-            device_tokens: None,
-            alert_uid: None,
-            title: None,
-            image_url: None,
-            state: None,
-            external_url: None,
-        }
-    }
-}
-

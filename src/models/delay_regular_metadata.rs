@@ -20,16 +20,7 @@ pub struct DelayRegularMetadata {
     pub r#type: Type,
 }
 
-impl DelayRegularMetadata {
-    pub fn new(r#type: Type) -> DelayRegularMetadata {
-        DelayRegularMetadata {
-            amount: None,
-            unit: None,
-            r#type,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Unit {
     #[serde(rename = "seconds")]
@@ -51,7 +42,7 @@ impl Default for Unit {
         Self::Seconds
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "regular")]
@@ -63,4 +54,3 @@ impl Default for Type {
         Self::Regular
     }
 }
-

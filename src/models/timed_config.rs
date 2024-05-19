@@ -26,19 +26,7 @@ pub struct TimedConfig {
     pub monthly_type: Option<MonthlyType>,
 }
 
-impl TimedConfig {
-    pub fn new() -> TimedConfig {
-        TimedConfig {
-            at_time: None,
-            week_days: None,
-            month_days: None,
-            ordinal: None,
-            ordinal_value: None,
-            monthly_type: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum WeekDays {
     #[serde(rename = "monday")]
@@ -62,7 +50,7 @@ impl Default for WeekDays {
         Self::Monday
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Ordinal {
     #[serde(rename = "1")]
@@ -84,7 +72,7 @@ impl Default for Ordinal {
         Self::Variant1
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum OrdinalValue {
     #[serde(rename = "day")]
@@ -114,7 +102,7 @@ impl Default for OrdinalValue {
         Self::Day
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum MonthlyType {
     #[serde(rename = "each")]
@@ -128,4 +116,3 @@ impl Default for MonthlyType {
         Self::Each
     }
 }
-

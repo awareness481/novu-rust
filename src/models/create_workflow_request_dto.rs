@@ -37,23 +37,3 @@ pub struct CreateWorkflowRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl CreateWorkflowRequestDto {
-    pub fn new(name: String, notification_group_id: String, steps: Vec<models::NotificationStep>) -> CreateWorkflowRequestDto {
-        CreateWorkflowRequestDto {
-            name,
-            notification_group_id,
-            notification_group: None,
-            tags: None,
-            description: None,
-            steps,
-            active: None,
-            draft: None,
-            critical: None,
-            preference_settings: None,
-            blueprint_id: None,
-            data: None,
-        }
-    }
-}
-

@@ -26,19 +26,7 @@ pub struct OrganizationBrandingResponseDto {
     pub font_family: Option<String>,
 }
 
-impl OrganizationBrandingResponseDto {
-    pub fn new(logo: String, color: String, font_color: String, content_background: String) -> OrganizationBrandingResponseDto {
-        OrganizationBrandingResponseDto {
-            direction: None,
-            logo,
-            color,
-            font_color,
-            content_background,
-            font_family: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Direction {
     #[serde(rename = "ltr")]
@@ -52,4 +40,3 @@ impl Default for Direction {
         Self::Ltr
     }
 }
-

@@ -19,11 +19,10 @@ pub struct GroupedBlueprintResponse {
 }
 
 impl GroupedBlueprintResponse {
-    pub fn new(general: Vec<serde_json::Value>, popular: serde_json::Value) -> GroupedBlueprintResponse {
-        GroupedBlueprintResponse {
-            general,
-            popular,
-        }
+    pub fn new(
+        general: Vec<serde_json::Value>,
+        popular: serde_json::Value,
+    ) -> GroupedBlueprintResponse {
+        GroupedBlueprintResponse { general, popular }
     }
 }
-

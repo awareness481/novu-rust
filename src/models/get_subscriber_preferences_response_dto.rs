@@ -19,13 +19,3 @@ pub struct GetSubscriberPreferencesResponseDto {
     #[serde(rename = "preference")]
     pub preference: Box<models::Preference>,
 }
-
-impl GetSubscriberPreferencesResponseDto {
-    pub fn new(preference: models::Preference) -> GetSubscriberPreferencesResponseDto {
-        GetSubscriberPreferencesResponseDto {
-            template: None,
-            preference: Box::new(preference),
-        }
-    }
-}
-

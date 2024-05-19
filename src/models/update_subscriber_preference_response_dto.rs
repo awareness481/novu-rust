@@ -21,11 +21,13 @@ pub struct UpdateSubscriberPreferenceResponseDto {
 }
 
 impl UpdateSubscriberPreferenceResponseDto {
-    pub fn new(template: models::TemplateResponse, preference: models::Preference) -> UpdateSubscriberPreferenceResponseDto {
+    pub fn new(
+        template: models::TemplateResponse,
+        preference: models::Preference,
+    ) -> UpdateSubscriberPreferenceResponseDto {
         UpdateSubscriberPreferenceResponseDto {
             template: Box::new(template),
             preference: Box::new(preference),
         }
     }
 }
-

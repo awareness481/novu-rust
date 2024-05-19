@@ -76,43 +76,7 @@ pub struct MessageResponseDto {
     pub overrides: serde_json::Value,
 }
 
-impl MessageResponseDto {
-    pub fn new(_template_id: String, _environment_id: String, _message_template_id: String, _organization_id: String, _notification_id: String, _subscriber_id: String, content: models::MessageResponseDtoContent, transaction_id: String, channel: Channel, seen: bool, last_seen_date: String, cta: models::MessageCta, status: Status, error_id: String, error_text: String, payload: serde_json::Value, overrides: serde_json::Value) -> MessageResponseDto {
-        MessageResponseDto {
-            _id: None,
-            _template_id,
-            _environment_id,
-            _message_template_id,
-            _organization_id,
-            _notification_id,
-            _subscriber_id,
-            subscriber: None,
-            template: None,
-            template_identifier: None,
-            created_at: None,
-            content: Box::new(content),
-            transaction_id,
-            subject: None,
-            channel,
-            seen,
-            email: None,
-            phone: None,
-            direct_webhook_url: None,
-            provider_id: None,
-            device_tokens: None,
-            title: None,
-            last_seen_date,
-            cta: Box::new(cta),
-            _feed_id: None,
-            status,
-            error_id,
-            error_text,
-            payload,
-            overrides,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Channel {
     #[serde(rename = "in_app")]
@@ -132,7 +96,7 @@ impl Default for Channel {
         Self::InApp
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
     #[serde(rename = "sent")]
@@ -148,4 +112,3 @@ impl Default for Status {
         Self::Sent
     }
 }
-

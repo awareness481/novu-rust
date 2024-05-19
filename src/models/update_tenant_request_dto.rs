@@ -19,14 +19,3 @@ pub struct UpdateTenantRequestDto {
     #[serde(rename = "data", skip_serializing_if = "Option::is_none")]
     pub data: Option<serde_json::Value>,
 }
-
-impl UpdateTenantRequestDto {
-    pub fn new() -> UpdateTenantRequestDto {
-        UpdateTenantRequestDto {
-            identifier: None,
-            name: None,
-            data: None,
-        }
-    }
-}
-

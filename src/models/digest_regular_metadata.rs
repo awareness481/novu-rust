@@ -30,21 +30,7 @@ pub struct DigestRegularMetadata {
     pub update_mode: Option<bool>,
 }
 
-impl DigestRegularMetadata {
-    pub fn new(r#type: Type) -> DigestRegularMetadata {
-        DigestRegularMetadata {
-            amount: None,
-            unit: None,
-            digest_key: None,
-            r#type,
-            backoff: None,
-            backoff_amount: None,
-            backoff_unit: None,
-            update_mode: None,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Unit {
     #[serde(rename = "seconds")]
@@ -66,7 +52,7 @@ impl Default for Unit {
         Self::Seconds
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "regular")]
@@ -80,7 +66,7 @@ impl Default for Type {
         Self::Regular
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum BackoffUnit {
     #[serde(rename = "seconds")]
@@ -102,4 +88,3 @@ impl Default for BackoffUnit {
         Self::Seconds
     }
 }
-

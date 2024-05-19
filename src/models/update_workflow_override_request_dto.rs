@@ -17,13 +17,3 @@ pub struct UpdateWorkflowOverrideRequestDto {
     #[serde(rename = "preferenceSettings", skip_serializing_if = "Option::is_none")]
     pub preference_settings: Option<Box<models::PreferenceChannels>>,
 }
-
-impl UpdateWorkflowOverrideRequestDto {
-    pub fn new() -> UpdateWorkflowOverrideRequestDto {
-        UpdateWorkflowOverrideRequestDto {
-            active: None,
-            preference_settings: None,
-        }
-    }
-}
-

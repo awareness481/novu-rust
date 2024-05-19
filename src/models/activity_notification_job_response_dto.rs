@@ -29,19 +29,3 @@ pub struct ActivityNotificationJobResponseDto {
     #[serde(rename = "status")]
     pub status: String,
 }
-
-impl ActivityNotificationJobResponseDto {
-    pub fn new(_id: String, r#type: String, execution_details: Vec<models::ActivityNotificationExecutionDetailResponseDto>, step: models::ActivityNotificationStepResponseDto, provider_id: serde_json::Value, status: String) -> ActivityNotificationJobResponseDto {
-        ActivityNotificationJobResponseDto {
-            _id,
-            r#type,
-            digest: None,
-            execution_details,
-            step: Box::new(step),
-            payload: None,
-            provider_id,
-            status,
-        }
-    }
-}
-

@@ -23,7 +23,12 @@ pub struct TranslationGroupsResponseDto {
 }
 
 impl TranslationGroupsResponseDto {
-    pub fn new(total_count: f64, data: Vec<String>, page_size: f64, page: f64) -> TranslationGroupsResponseDto {
+    pub fn new(
+        total_count: f64,
+        data: Vec<String>,
+        page_size: f64,
+        page: f64,
+    ) -> TranslationGroupsResponseDto {
         TranslationGroupsResponseDto {
             total_count,
             data,
@@ -32,4 +37,3 @@ impl TranslationGroupsResponseDto {
         }
     }
 }
-

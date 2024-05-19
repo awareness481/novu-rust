@@ -19,9 +19,6 @@ pub struct RenameTopicRequestDto {
 
 impl RenameTopicRequestDto {
     pub fn new(name: String) -> RenameTopicRequestDto {
-        RenameTopicRequestDto {
-            name,
-        }
+        RenameTopicRequestDto { name }
     }
 }
-

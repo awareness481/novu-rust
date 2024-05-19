@@ -22,7 +22,7 @@ impl Default for MessageResponseDtoContent {
         Self::EmailBlock(Default::default())
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "text")]
@@ -36,4 +36,3 @@ impl Default for Type {
         Self::Text
     }
 }
-

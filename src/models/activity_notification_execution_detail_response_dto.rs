@@ -32,22 +32,7 @@ pub struct ActivityNotificationExecutionDetailResponseDto {
     pub source: Source,
 }
 
-impl ActivityNotificationExecutionDetailResponseDto {
-    pub fn new(_id: String, _job_id: String, status: Status, detail: String, is_retry: bool, is_test: bool, provider_id: serde_json::Value, source: Source) -> ActivityNotificationExecutionDetailResponseDto {
-        ActivityNotificationExecutionDetailResponseDto {
-            _id,
-            _job_id,
-            status,
-            detail,
-            is_retry,
-            is_test,
-            provider_id,
-            raw: None,
-            source,
-        }
-    }
-}
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Status {
     #[serde(rename = "Success")]
@@ -69,7 +54,7 @@ impl Default for Status {
         Self::Success
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Source {
     #[serde(rename = "Credentials")]
@@ -87,4 +72,3 @@ impl Default for Source {
         Self::Credentials
     }
 }
-

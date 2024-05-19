@@ -20,13 +20,10 @@ pub struct TopicPayloadDto {
 
 impl TopicPayloadDto {
     pub fn new(topic_key: String, r#type: Type) -> TopicPayloadDto {
-        TopicPayloadDto {
-            topic_key,
-            r#type,
-        }
+        TopicPayloadDto { topic_key, r#type }
     }
 }
-/// 
+///
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum Type {
     #[serde(rename = "Subscriber")]
@@ -40,4 +37,3 @@ impl Default for Type {
         Self::Subscriber
     }
 }
-

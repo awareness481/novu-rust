@@ -18,9 +18,6 @@ pub struct DataWrapperDto {
 
 impl DataWrapperDto {
     pub fn new(data: serde_json::Value) -> DataWrapperDto {
-        DataWrapperDto {
-            data,
-        }
+        DataWrapperDto { data }
     }
 }
-

@@ -18,9 +18,6 @@ pub struct UpdateSubscriberOnlineFlagRequestDto {
 
 impl UpdateSubscriberOnlineFlagRequestDto {
     pub fn new(is_online: bool) -> UpdateSubscriberOnlineFlagRequestDto {
-        UpdateSubscriberOnlineFlagRequestDto {
-            is_online,
-        }
+        UpdateSubscriberOnlineFlagRequestDto { is_online }
     }
 }
-
