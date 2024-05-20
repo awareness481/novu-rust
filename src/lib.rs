@@ -49,21 +49,21 @@ pub mod topics;
 pub mod workflow_override;
 
 pub struct Novu {
-    client: Arc<Client>,
-    environments: Environments,
-    feeds: Feeds,
-    layouts: Layouts,
-    changes: Changes,
-    inbound_parse: InboundParse,
-    executation_details: ExecutationDetails,
-    integrations: Integrations,
-    messages: Messages,
-    notification_groupss: NotificationGroups,
-    organizations: Organizations,
-    subscribers: Subscribers,
-    tenants: Tenants,
-    topics: Topics,
-    workflow_override: WorkflowOverride,
+    pub client: Arc<Client>,
+    pub environments: Environments,
+    pub feeds: Feeds,
+    pub layouts: Layouts,
+    pub changes: Changes,
+    pub inbound_parse: InboundParse,
+    pub executation_details: ExecutationDetails,
+    pub integrations: Integrations,
+    pub messages: Messages,
+    pub notification_groupss: NotificationGroups,
+    pub organizations: Organizations,
+    pub subscribers: Subscribers,
+    pub tenants: Tenants,
+    pub topics: Topics,
+    pub workflow_override: WorkflowOverride,
 }
 
 #[derive(Serialize)]
