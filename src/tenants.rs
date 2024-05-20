@@ -20,7 +20,7 @@ pub struct GetTenantsDto {
 }
 
 impl GetTenantsDto {
-    pub fn empty(self) -> Self {
+    pub fn empty(&self) -> Self {
         Self {
             page: None,
             limit: None,
@@ -66,11 +66,11 @@ impl Tenants {
             .await
     }
 
-    pub async fn delete(self, identifier: String) -> Result<(), ResponseError> {
+    pub async fn delete(&self, identifier: String) -> Result<(), ResponseError> {
         self.client.delete(format!("/tenants/{identifier}")).await
     }
 
-    pub async fn get(self, identifier: String) -> Result<GetTenantResponseDto, ResponseError> {
+    pub async fn get(&self, identifier: String) -> Result<GetTenantResponseDto, ResponseError> {
         self.client.get(format!("/tenants/{identifier}")).await
     }
 }

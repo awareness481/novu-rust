@@ -85,7 +85,7 @@ impl Subscribers {
         }
     }
 
-    pub async fn get(self, subscriber_id: String) -> Result<SubscriberResponseDto, ResponseError> {
+    pub async fn get(&self, subscriber_id: String) -> Result<SubscriberResponseDto, ResponseError> {
         self.client
             .get(format!("/subscribers/${subscriber_id}"))
             .await
@@ -98,7 +98,7 @@ impl Subscribers {
         self.client.post("/subscribers", Some(&data)).await
     }
 
-    pub async fn bulk_create(self, data: BulkSubscriberCreateDto) -> Result<(), ResponseError> {
+    pub async fn bulk_create(&self, data: BulkSubscriberCreateDto) -> Result<(), ResponseError> {
         self.client.post("/subscribers/bulk", Some(&data)).await
     }
 

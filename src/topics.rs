@@ -69,7 +69,7 @@ impl Topics {
             .await
     }
 
-    pub async fn list(self, data: GetTopicsDto) -> Result<FilterTopicsResponseDto, ResponseError> {
+    pub async fn list(&self, data: GetTopicsDto) -> Result<FilterTopicsResponseDto, ResponseError> {
         match qs::to_string(&data) {
             Ok(query) => {
                 if !query.is_empty() {
@@ -82,11 +82,11 @@ impl Topics {
         }
     }
 
-    pub async fn delete(self, topic_key: String) -> Result<(), ResponseError> {
+    pub async fn delete(&self, topic_key: String) -> Result<(), ResponseError> {
         self.client.delete(format!("/topics/{topic_key}")).await
     }
 
-    pub async fn get(self, topic_key: String) -> Result<GetTopicResponseDto, ResponseError> {
+    pub async fn get(&self, topic_key: String) -> Result<GetTopicResponseDto, ResponseError> {
         self.client.get(format!("/topics/{topic_key}")).await
     }
 

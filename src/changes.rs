@@ -28,7 +28,7 @@ impl Changes {
         Self { client }
     }
 
-    pub async fn get(self, data: GetChangesPayload) -> Result<ChangeResponseDto, ResponseError> {
+    pub async fn get(&self, data: GetChangesPayload) -> Result<ChangeResponseDto, ResponseError> {
         let mut data = data;
 
         if data.limit.is_none() {

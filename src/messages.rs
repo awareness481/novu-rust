@@ -43,7 +43,7 @@ impl Messages {
         Self { client }
     }
 
-    pub async fn list(self, data: GetMessagesDto) -> Result<ActivitiesResponseDto, ResponseError> {
+    pub async fn list(&self, data: GetMessagesDto) -> Result<ActivitiesResponseDto, ResponseError> {
         match qs::to_string(&data) {
             Ok(query) => {
                 if !query.is_empty() {

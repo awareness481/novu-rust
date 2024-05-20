@@ -95,7 +95,7 @@ impl WorkflowOverride {
             .await
     }
 
-    pub async fn delete(self, override_id: String) -> Result<(), ResponseError> {
+    pub async fn delete(&self, override_id: String) -> Result<(), ResponseError> {
         self.client
             .delete(format!("/workflow-overrides/{override_id}"))
             .await
