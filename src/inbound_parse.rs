@@ -13,7 +13,7 @@ impl InboundParse {
         Self { client }
     }
 
-    pub async fn get_mx_status(self) -> Result<Option<GetMxRecordResponseDto>, ResponseError> {
+    pub async fn get_mx_status(&self) -> Result<Option<GetMxRecordResponseDto>, ResponseError> {
         self.client.get("/inbound-parse/mx/status").await
     }
 }

@@ -45,12 +45,12 @@ impl Changes {
         }
     }
 
-    pub async fn get_count(self) -> Result<DataNumberDto, ResponseError> {
+    pub async fn get_count(&self) -> Result<DataNumberDto, ResponseError> {
         self.client.get("/changes/count").await
     }
 
     pub async fn apply_one(
-        self,
+        &self,
         data: ApplyOneDto,
     ) -> Result<Vec<ChangeResponseDto>, ResponseError> {
         self.client
@@ -59,7 +59,7 @@ impl Changes {
     }
 
     pub async fn apply_many(
-        self,
+        &self,
         data: BulkApplyChangeDto,
     ) -> Result<Vec<ChangeResponseDto>, ResponseError> {
         self.client.post("/changes/bulk/apply", Some(&data)).await
