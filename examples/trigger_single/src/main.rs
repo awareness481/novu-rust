@@ -1,9 +1,9 @@
 extern crate novu_rust;
-use novu_rust::{models::SubscriberPayloadDto, Novu, TriggerPayload};
+use novu_rust::subscribers::SubscriberPayloadDto;
+use novu_rust::{Novu, TriggerPayload};
 #[async_std::main]
 async fn main() {
     let novu = Novu::new(std::env::var("API_KEY").unwrap(), None).unwrap();
-
     let result = novu
         .trigger(TriggerPayload {
             name: "testing".into(),

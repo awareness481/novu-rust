@@ -80,7 +80,6 @@ impl Client {
     ) -> Result<T, ResponseError> {
         match res {
             Ok(response) => {
-                dbg!(&response);
                 let res = response.json::<Response<T>>().await;
 
                 match res {

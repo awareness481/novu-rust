@@ -5,22 +5,19 @@ use std::sync::Arc;
 use changes::Changes;
 use client::{Client, Response, ResponseError};
 use environments::Environments;
-use executation_details::ExecutationDetails;
+use execution_details::ExecutationDetails;
 use feeds::Feeds;
 use inbound_parse::InboundParse;
 use integrations::Integrations;
 use layouts::Layouts;
 use messages::Messages;
-use models::{
-    BulkTriggerEventDto, SubscriberPayloadDto, TriggerEventRequestDto, TriggerEventRequestDtoActor,
-    TriggerEventResponseDto, TriggerEventToAllRequestDto,
-};
 use notification_groups::NotificationGroups;
 use organizations::Organizations;
 use reqwest::Error;
-use subscribers::Subscribers;
+use subscribers::{types::SubscriberPayloadDto, Subscribers};
 use tenants::Tenants;
 use topics::Topics;
+pub use trigger::{BulkTriggerEventDto, TriggerEventResponseDto, TriggerEventToAllRequestDto};
 use workflow_override::WorkflowOverride;
 
 #[macro_use]
@@ -34,18 +31,19 @@ extern crate reqwest;
 pub mod changes;
 pub mod client;
 pub mod environments;
-pub mod executation_details;
+pub mod execution_details;
 pub mod feeds;
 pub mod inbound_parse;
 pub mod integrations;
 pub mod layouts;
 pub mod messages;
-pub mod models;
 pub mod notification_groups;
 pub mod organizations;
+pub mod shared;
 pub mod subscribers;
 pub mod tenants;
 pub mod topics;
+pub mod trigger;
 pub mod workflow_override;
 
 pub struct Novu {
